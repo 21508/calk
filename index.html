@@ -1,0 +1,91 @@
+<!-- FILE: index.html -->
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Научен уеб калкулатор</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator" id="calculator">
+    <header class="calc-header">
+      <h1>Научен уеб калкулатор</h1>
+      <div class="theme-controls">
+        <label for="theme-select">Тема</label>
+        <select id="theme-select">
+          <option value="light">Светла</option>
+          <option value="dark">Тъмна</option>
+          <option value="blue">Синя</option>
+          <option value="green">Зелена</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="calc-main">
+      <section class="panel">
+        <div class="display" id="display" aria-live="polite">0</div>
+        <div class="row operators">
+          <button class="btn" data-action="clear">C</button>
+          <button class="btn" data-action="back">CE</button>
+          <button class="btn" id="toggleSci">Научен режим</button>
+        </div>
+
+        <div class="keys" id="keys">
+          <!-- digits -->
+          <div class="digits">
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn" data-value="×">×</button>
+
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn" data-value="-">−</button>
+
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn" data-value="+">+</button>
+
+            <button class="btn" data-value="0">0</button>
+            <button class="btn" data-value=".">.</button>
+            <button class="btn" data-value="÷">÷</button>
+            <button class="btn equals" data-action="equals">=</button>
+          </div>
+
+          <!-- scientific hidden by default -->
+          <div class="scientific" id="scientific">
+            <button class="btn" data-fn="sin">sin</button>
+            <button class="btn" data-fn="cos">cos</button>
+            <button class="btn" data-fn="tan">tan</button>
+            <button class="btn" data-fn="log">log</button>
+
+            <button class="btn" data-fn="ln">ln</button>
+            <button class="btn" data-fn="sqrt">√</button>
+            <button class="btn" data-action="pow2">x²</button>
+            <button class="btn" data-action="pow3">x³</button>
+
+            <button class="btn" data-action="pow">xʸ</button>
+            <button class="btn" data-value="π">π</button>
+            <button class="btn" data-value="e">e</button>
+            <button class="btn" data-action="fact">n!</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="history" id="history">
+        <div class="history-header">
+          <h2>История</h2>
+          <button class="btn small" id="clearHistory">Изчисти</button>
+        </div>
+        <ul id="historyList" class="history-list" aria-live="polite"></ul>
+      </aside>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
